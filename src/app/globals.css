@@ -1,0 +1,393 @@
+@import "tailwindcss";
+:root {
+  --bgColor: #000;
+  --secondary: #9f0000;
+  --gray: #7c7c7c;
+  --textColor: #fff;
+}
+
+@layer utilities {
+  .blurBox {
+    background-color: rgba(0, 0, 0, 0.014);
+    backdrop-filter: blur(30px);
+  }
+}
+
+body {
+  /* background: var(--bgColor); */
+  font-family: var(--font-poppins), sans-serif;
+}
+button {
+  cursor: pointer;
+  background-image: linear-gradient(to right, #ff0f0f, #ff4242);
+}
+button:hover {
+  transform: scale(0.98);
+}
+li {
+  line-height: 2rem;
+}
+
+/* hamburger button */
+.hamburger {
+  width: 35px;
+  height: 35px;
+  margin: 0 0 0 1rem;
+  position: relative;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  background-image: linear-gradient(to right, #ff0f0f, #ff4242);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
+  width: 100%;
+  top: 15px;
+}
+
+/* logo slider css */
+
+.logoSlider {
+  white-space: nowrap;
+  position: relative;
+}
+
+.logoSlider:before,
+.logoSlider:after {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+
+.sliderItems {
+  animation: 30s slides infinite linear;
+}
+.sliderItems:nth-child(2) {
+  animation: 30s slidesReverse infinite linear;
+}
+
+/* hero banner slider */
+
+.swiper {
+  position: relative;
+}
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+.homeSwiper {
+  position: relative;
+}
+.homeSwiper .swiper-pagination {
+  pointer-events: none;
+  position: absolute;
+  bottom: 2rem !important;
+  z-index: 2;
+}
+.homeSwiper .swiper-pagination-bullet {
+  pointer-events: all;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #fff;
+}
+
+/* service accordian css */
+
+/* .accordianItem {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+} */
+.tabImageDiv {
+  position: absolute;
+  border-radius: 0px 20px 20px 20px;
+  border: 2px solid #714545;
+  /* margin-left: 2rem; */
+  overflow: hidden;
+}
+
+/* .tabImage{
+  transform: translate(0, 300px);
+} */
+
+/*form field  */
+z .form {
+  border-radius: 20px;
+  background-color: #6640403d;
+  backdrop-filter: blur(30px);
+}
+.formField {
+  display: block;
+  width: 100%;
+
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  padding: 1rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgb(167, 165, 165);
+}
+
+.homeGridItem {
+  /* width: 150px; */
+  /* padding: 1.5rem; */
+  border: 1px solid #7a4545;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.homeGridItem p {
+  z-index: 10;
+  position: relative;
+}
+
+.footerCard {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  transition: all ease-in-out 0.2s;
+  overflow: hidden;
+}
+.footerCard h3 {
+  font-weight: 700;
+}
+
+.messageBoxTriangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffcaca;
+}
+
+/* category page card animation */
+
+.containerCategory {
+  animation: rotate 0.5s ease 1s forwards;
+}
+.categoryDiv {
+  --divWidth: 130px;
+  --divHeight: 180px;
+}
+.categoryImg {
+  width: var(--divWidth);
+  height: var(--divHeight);
+}
+
+.categoryImg0 {
+  transform: rotate(-10deg);
+}
+.categoryImg1 {
+  transform: rotate(5deg);
+}
+.categoryImg2 {
+  transform: rotate(-10deg);
+}
+.categoryImg3 {
+  transform: rotate(5deg);
+}
+.categoryImg4 {
+  transform: rotate(-10deg);
+}
+.hoverDiv {
+  position: absolute;
+  background-color: #ffcaca;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hoverDiv:nth-child(1) {
+  animation: divHover 0.5s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(2) {
+  animation: divHover 1s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(3) {
+  animation: divHover 0.7s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(4) {
+  animation: divHover 1.3s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(5) {
+  animation: divHover 0.5s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(6) {
+  animation: divHover 1s ease-in-out infinite alternate;
+}
+.hoverDiv:nth-child(7) {
+  animation: divHover 0.5s ease-in-out infinite alternate;
+}
+
+/***************************************************************************************************/
+/* .categoryHeading {
+  animation: fadeInUp 0.5s ease 1s forwards;
+} */
+
+.categoryDescImg,
+.categoryImg {
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+}
+
+/* svg map  */
+.mapSvg:hover .mapRegion {
+  opacity: 0.5;
+}
+
+/****************************************************************************************************/
+/* vimeo wrapper */
+
+.vimeo-wrapper {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.vimeo-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*****************************************************************************************************/
+/* service Background hover effect */
+.bgHoverContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111a2; /* Dark background */
+  /* The 'Light' layer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 600) {
+  .sliderItems {
+    animation: 10s slides infinite linear;
+  }
+  .swiper-slide-active {
+    transform: scale(1);
+  }
+  .logoSlider:before,
+  .logoSlider:after {
+    display: none;
+  }
+  .categoryDiv {
+    --divWidth: 180px;
+    --divHeight: 230px;
+  }
+  .mapDescBox {
+    width: 10rem;
+    height: 5rem;
+    padding: 0.5rem;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes slidesReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(-5deg);
+    opacity: 1;
+  }
+}
+@keyframes divHover {
+  to {
+    transform: translateY(5px);
+  }
+}
+@keyframes fadeInUp {
+  to {
+    transform: translateY(-90);
+    opacity: 1;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@media (min-width: 1000) {
+  @keyframes move1 {
+    to {
+      transform: translate(calc(var(--divWidth) * -2), 0);
+    }
+  }
+
+  @keyframes move2 {
+    to {
+      transform: translate(calc(var(--divWidth) * -1), 0);
+    }
+  }
+  @keyframes move3 {
+    to {
+      transform: translate(0);
+    }
+  }
+  @keyframes move4 {
+    to {
+      transform: translate(calc(var(--divWidth) * 1), 0);
+    }
+  }
+  @keyframes move5 {
+    to {
+      transform: translate(calc(var(--divWidth) * 2), 0);
+    }
+  }
+}
